@@ -1,0 +1,18 @@
+<h2>User Show Page</h2>
+
+<h3><%= @user.name %></h3>
+<form action="/qweets/create" method="post">
+  <p>
+    Click this Button for new Qweet: <input type="submit" name="user_id" value=<%= "#{@user.id}" %>>
+  </p>
+</form>
+<% @user.qweets.each do |qweet| %>
+  <p><%= qweet.content %></p>
+  <form action="/qweets/<%= qweet.id %>/edit" method="post">
+    <input type="submit" value="Edit Qweet">
+    <br>
+  </form>
+<% end %>
+
+<br>
+<a href="/users/<%= @user.id %>/edit"> Edit <%= @user.name %></a>

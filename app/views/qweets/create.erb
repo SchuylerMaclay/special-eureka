@@ -1,0 +1,10 @@
+<h2>New Qweet Page</h2>
+
+<h3>User Name: <a href="/users/<%= @qweet.user.id %>"> <%= @qweet.user.name %></a></h3>
+<p>Qweet Id: <%= @qweet.id %></p>
+
+<form  action=<%= "/qweets/#{@qweet.id}" %> method="post">
+  <label>Qweet:  <input type="text" name="content" value=<%= "#{@qweet.content}" %>></label>
+  <br></br>
+  <p><input type="submit" value="Save" id="Save"></p>
+</form>

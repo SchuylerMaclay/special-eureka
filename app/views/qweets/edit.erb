@@ -1,0 +1,14 @@
+<h2>Edit Qweet Page</h2>
+
+<h3>User Name: <a href="/users/<%= @qweet.user.id %>"> <%= @qweet.user.name %></a></h3>
+<p>Qweet Id: <%= @qweet.id %></p>
+
+<form  action=<%= "/qweets/#{@qweet.id}" %> method="post">
+  <label>Qweet:  <input type="text" name="content" value=<%= "#{@qweet.content}" %>></label>
+  <br></br>
+  <p><input type="submit" value="Save" id="Save"></p>
+</form>
+
+<form action="/qweets/<%= @qweet.id %>/delete" method="post">
+  <input type="submit" name="delete" value="delete"></input>
+</form>

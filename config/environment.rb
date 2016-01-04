@@ -8,5 +8,10 @@ ActiveRecord::Base.establish_connection(
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
 
-require_all 'app'
-require_all 'lib'
+$: << '.'
+
+Dir["app/models/*.rb"].each {|f| require f}
+Dir["app/controllers/*.rb"].each {|f| require f}
+Dir["app/views/*.rb"].each {|f| require f}
+Dir["app/config/*.rb"].each {|f| require f}
+Dir["app/db/*.rb"].each {|f| require f}

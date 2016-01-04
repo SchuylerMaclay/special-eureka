@@ -1,0 +1,10 @@
+<h2>Qweets Index</h2>
+<% @qweets.each do |qweet| %>
+<% if qweet && qweet.id && qweet.content && qweet.user_id %>
+  <h4><%= qweet.content %></h4>
+    <form action="/qweets/<%= qweet.id %>/edit" method="post">
+      <input type="submit" value="Edit Qweet">
+    </form>
+  <a href="/users/<%= qweet.user.id %>">Link to <%= qweet.user.name %>'s page</a>
+  <% end %>
+<% end %>

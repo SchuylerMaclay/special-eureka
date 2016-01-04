@@ -1,0 +1,7 @@
+<h2>User Index</h2>
+<% @users.each do |user| %>
+  <h3><%= user.name %></h3>
+  <a href="/users/<%= user.id %>">Link to <%= user.name %>'s page</a>
+<% end %>
+<br><br><br>
+<a href="/users/create">Click Here To Create a New User</a>

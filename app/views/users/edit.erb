@@ -1,0 +1,13 @@
+<h2>User Edit Page</h2>
+
+<h3>User Id: <%= @user.id %></h3>
+
+<form  action=<%= "/users/#{@user.id}" %> method="post">
+  <label>Name <input type="text" name="name" value=<%= "#{@user.name}" %>></label>
+  <br></br>
+  <p><input type="submit" value="Save" id="Save"></p>
+</form>
+
+<form action="/users/<%= @user.id %>/delete" method="post">
+  <input type="submit" name="delete" value="delete"></input>
+</form>
